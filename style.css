@@ -1,0 +1,190 @@
+/* ① 画面全体の初期設定*/
+body {
+	margin: 0;		/* 画面の端の余計な隙間をゼロにする*/
+	padding: 0;
+	font-family: sans-serif;		/* スッキリしたゴシック体にする */
+}
+
+/* ② ヘッダーの箱（ロゴとメニューを左右に分ける） */
+.site-header {
+	display: flex;		/* 中身を横並びにする魔法 */
+	justify-content: space-between;		/* ロゴh左端、メニューは右端へ離す */
+	align-items: center;		/* 上下の高さを真ん中に揃える */
+	background-color: #111;		/* チームらしいクールなクロ背景 */
+	color: #fff;		/* 文字は白 */
+	padding: 20px 50px;		/* 上下に20px、左右に50pxのゆとり */
+}
+
+/* ③ チームロゴのデザイン */
+.logo {
+	margin: 0;		/* 見出し特有の余計な隙間を消す */
+	font-size: 28px;
+	letter-spacing: 3px;		/* 文字の間隔を少し広げてロゴっぽくする */
+}
+
+/* ④ メニューのリスト（黒丸を消して横並びにする） */
+.global-nav ul {
+	list-style: none;		/* 戦闘の「・」を消す */
+	display: flex;		/* 4つの項目を横並びにする */
+	gap: 30px;		/* 項目同士の隙間を30px空ける */
+	margin: 0;
+	padding: 0;
+}
+
+/* ⑤ メニューの文字（青い下線を消して白くする） */
+.global-nav a {
+	text-decoration: none;		/* 下線を消す */
+	color: #fff;		/* リンクの色を白に */
+	font-weight: bold;		/* 太字にする */
+}
+
+/* ⑥ メインビジュアル（大画面エリア） */
+.hero-section {
+	height: 85vh;		/* 画面の高さの85%分、大きく広げる */
+	background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80');
+	background-size: cover;		/* 箱のサイズに合わせて画像を綺麗に敷き詰める */
+	background-position: center;		/* 画像の中央を基準にする */
+	
+	/* 中の箱(hero-content)を上下左右のど真ん中に置く魔法 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	color: #fff;		/* 文字色は白 */
+	text-align: center;		/* 文字自体も中央に揃えにする */
+	text-shadow: 2px 2px 8px rgba(0,0,0,0.8);		/* 背景に負けないよう濃い影をつける */
+}
+
+/* メインビジュアル内のチーム名 */
+.hero-content h2 {
+	font-size: 64px;		/* インパクトのある特大サイズ */
+	margin: 0;
+	letter-spacing: 8px;		/* 文字の間隔を広げて重圧感を出す */
+}
+
+/* メインビジュアル内のスローガン */
+.hero-content p {
+	font-size: 18px;
+	margin-top: 15px;		/* チーム名との間に少し隙間を開ける */
+	letter-spacing: 3px;
+}
+
+/* ⑦ABOUTセクション（チーム紹介） */
+.about-section {
+	background-color: #1a1a1a;		/* ヘッダーより少し明るいダークグレー */
+	color: #fff;		/* 文字色は白 */
+	padding: 80px 2px;		/* 上下に80pxのゆとりを持たせる */
+}
+
+/* セクションの共通タイトル */
+.section-title {
+	text-align: center;		/* 真ん中寄せ */
+	font-size: 36px;
+	letter-spacing: 4px;
+	margin-top: 0;
+	margin-bottom: 50px;		/* タイトルの下に隙間を空ける */
+}
+
+/* ロゴと文章を横並びにする親箱 */
+.about-content {
+	display: flex;		/* 横並びの魔法 */
+	justify-content: center;		/* 中央に集める */
+	align-items: center;		/* たての位置を真ん中に揃える */
+	gap: 60px;		/* ロゴと文章の間を60px空ける */
+	max-width: 1000px;		/* 箱の最大幅を1000pxに制限する */
+	margin: 0 auto;		/* 箱自体を画面の「ど真ん中」に配置する技 */
+}
+
+/* チームロゴのデザイン */	
+.about-image img {
+	width: 280px;
+	height: 280px;
+	border-radius: 15px;		/* 角を少し丸くしてスタイリッシュに */
+	border: 2px solid #ff5722;		/* NEXUSのテーマカラーで枠線をつける */
+	object-fit: cover;		/* 画像がゆがまないように綺麗に収める */
+}
+
+/* 紹介文の箱 */
+.about-text {
+	max-width: 550px;		/* 文章が横に長くなりすぎて読みにくくなるのを防ぐ */
+}
+
+/* 紹介文の小見出し */
+.about-text h3 {
+	font-size: 24px;
+	color: #ff5722;		/* テーマカラーで強調！ */
+	margin-top: 0;
+}
+
+/* 紹介文の本文 */
+.about-text p {
+	line-height: 1.8;		/* 行間を広げて読みやすくする */
+	color: #ccc;		/* 真っ白より少し落ち着いたライトグレー */
+}
+
+/* ⑧ MEMBERセクション（メンバーセクション） */
+.member-section {
+	background-color: #111;		/* ABOUT(#1a1a1a)より少し暗くしてセクションの区切りをつける */
+	color: #fff;
+	padding: 80px 20px;
+}
+
+/* 三枚のカードを横並びにする親箱 */
+.member-list {
+	display: flex;		/* 横並びの魔法！ */
+	justify-content: center;		/* 中央に集める */
+	gap: 30px;		/* カード同士の隙間を30px空ける */
+	flex-wrap: wrap;		/* 画面幅が狭い時は自動で折り返す（スマホ対応の基本） */
+	max-width: 1100px;
+	margin: 0 auto;		/* 親箱を画面のど真ん中に配置 */
+}
+
+/* メンバーカード一枚ずつのデザイン */
+.member-card {
+	background-color: #1e1e1e;		/* 背景より少し明るいカードの色 */
+	border-radius: 12px;		/* 角を丸くする */
+	padding: 30px 20px;
+	width: 280px;		/* カードの横幅を280pxに統一 */
+	text-align: center;		/* カード内の文字や画像をすべて中央揃え */
+	border-bottom: 4px solid #ff5722;	/* カードの下部にテーマカラーのラインを引く */
+	transition: 0.3s;	/* 動きを0.3秒かけて滑らかにする */
+}
+
+/* カードにマウスが乗った時の動き */
+.member-card:hover {
+	transform: translateY(-10px);	/* 上方向に10pxふわっと浮き上がる！ */
+}
+
+/* メンバーのアイコン画像 */
+.member-card img {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;		/* アイコンをまん丸にする */
+	object-fit: cover;
+	margin-bottom: 15px;
+	border: 2px solid #444;
+}
+
+/* プレイヤー名 */
+.member-card h3 {
+	font-size: 24px;
+	margin: 10px 0 5px;
+	letter-spacing: 2px;
+}
+
+/* 役割（ロール） */
+.member-card .role {
+	color: #ff5722;		/* テーマカラーで役割を強調 */
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 15px;
+	letter-spacing: 1px;
+}
+
+/* 紹介文 */
+.member-card .bio {
+	font-size: 14px;
+	color: #ccc;
+	line-height: 1.6;
+	margin: 0;
+}
